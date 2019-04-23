@@ -40,6 +40,10 @@ function get_file_extension($file_name) {
 	return substr(strrchr($file_name,'.'),1);
 }
 
+/*
+We'll use three utility functions to make the system work: get_files (retrieves all of the files in a given directory), get_file_extension, and make_thumb (generates a thumbnail image from a source image). These are good functions to keep at hand for other purposes too.
+*/
+
 
 /*
  * The PHP: Setting and HTML Generation
@@ -72,3 +76,8 @@ if(count($image_files)) {
 else {
 	echo '<p>There are no images in this gallery.</p>';
 }
+
+
+/*
+The first step is to define a few simple settings which will dictate image paths, the width by which all thumbnails will be created, and the number of images per row. The action begins with rounding up all of the files. With every image in the gallery, we check to see if a thumbnail exists. If a thumbnail doesn't exist, we use PHP and the utility function above to generate one. When the thumbnail is generated (or there was one there in the first place), we output the HTML link/image. I've given the A element the "smoothbox" CSS class so that Smoothbox will make the larger image display in the lightbox.
+*/
