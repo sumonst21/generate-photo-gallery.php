@@ -1,0 +1,3 @@
+.clear			{ clear:both; }
+.photo-link		{ padding:5px; margin:5px; border:1px solid #ccc; display:block; width:200px; float:left; }
+.photo-link:hover	{ border-color:#999; }
